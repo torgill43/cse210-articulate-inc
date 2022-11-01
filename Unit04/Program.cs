@@ -15,10 +15,10 @@ namespace Unit04
     class Program
     {
         private static int FRAME_RATE = 12;
-        private static int MAX_X = 900;
-        private static int MAX_Y = 600;
-        private static int CELL_SIZE = 15;
-        private static int FONT_SIZE = 15;
+        private static int MAX_X = 1600;
+        private static int MAX_Y = 900;
+        private static int CELL_SIZE = 25;
+        private static int FONT_SIZE = 25;
         private static int COLS = 60;
         private static int ROWS = 40;
         private static string CAPTION = "Robot Finds Kitten";
@@ -78,13 +78,14 @@ namespace Unit04
                 artifact.SetColor(color);
                 artifact.SetPosition(position);
                 artifact.SetMessage(message);
+                // artifact.SetMessage(message + $"Pos: {x")
                 cast.AddActor("artifacts", artifact);
             }
 
             // start the game
             KeyboardService keyboardService = new KeyboardService(CELL_SIZE);
             VideoService videoService 
-                = new VideoService(CAPTION, MAX_X, MAX_Y, CELL_SIZE, FRAME_RATE, false);
+                = new VideoService(CAPTION, MAX_X, MAX_Y, CELL_SIZE, FRAME_RATE, true);
             Director director = new Director(keyboardService, videoService);
             director.StartGame(cast);
 
