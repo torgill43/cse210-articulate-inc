@@ -27,25 +27,25 @@ namespace Unit05.Game.Scripting
         public void Execute(Cast cast, Script script)
         {
             // left
-            if (_keyboardService.IsKeyDown("a"))
+            if (_keyboardService.IsKeyDown("leftarrow"))
             {
                 _direction = new Point(-Constants.CELL_SIZE, 0);
             }
 
             // right
-            if (_keyboardService.IsKeyDown("d"))
+            if (_keyboardService.IsKeyDown("rightarrow"))
             {
                 _direction = new Point(Constants.CELL_SIZE, 0);
             }
 
             // up
-            if (_keyboardService.IsKeyDown("w"))
+            if (_keyboardService.IsKeyDown("uparrow"))
             {
                 _direction = new Point(0, -Constants.CELL_SIZE);
             }
 
             // down
-            if (_keyboardService.IsKeyDown("s"))
+            if (_keyboardService.IsKeyDown("downarrow"))
             {
                 _direction = new Point(0, Constants.CELL_SIZE);
             }
